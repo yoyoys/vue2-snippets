@@ -26,14 +26,14 @@
 			"    fetch ({commit, dispatch}) {",
 			"      commit('busy')",
 			"      return Vue.axios",
-			"        .get(`${CONFIG.ACCOUNT_URL}$1`)",
+			"        .get(`${$1}$2`)",
 			"        .then((res) => {",
 			"          commit('update', res.data)",
 			"        })",
-			"        .catch((res) => { console.error('$1 fetch fail', res) })",
+			"        .catch((res) => { console.error('$2 fetch fail', res) })",
 			"        .then(() => { commit('done') })",
 			"    }",
-			"  }$2",
+			"  }$3",
 			"}",
 			""
 		]
