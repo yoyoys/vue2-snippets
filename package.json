@@ -4,6 +4,10 @@
     "description": "My snippets for work use",
     "version": "0.0.1",
     "publisher": "yoyoys",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yoyoys/vue2-snippets"
+    },
     "engines": {
         "vscode": "^1.23.0"
     },
