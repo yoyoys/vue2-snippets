@@ -1,0 +1,41 @@
+{
+	"Vuex Module": {
+		"prefix": "vmz",
+		"body": [
+			"import Vue from 'vue'",
+			"import CONFIG from '@/lib/config'",
+			"",
+			"export default {",
+			"  namespaced: true,",
+			"  state: {",
+			"    list: [],",
+			"    isBusy: false",
+			"  },",
+			"  mutations: {",
+			"    busy (state) {",
+			"      state.isBusy = true",
+			"    },",
+			"    done (state) {",
+			"      state.isBusy = false",
+			"    },",
+			"    update (state, value) {",
+			"      state.list = value",
+			"    }",
+			"  },",
+			"  actions: {",
+			"    fetch ({commit, dispatch}) {",
+			"      commit('busy')",
+			"      return Vue.axios",
+			"        .get(`${CONFIG.ACCOUNT_URL}$1`)",
+			"        .then((res) => {",
+			"          commit('update', res.data)",
+			"        })",
+			"        .catch((res) => { console.error('$1 fetch fail', res) })",
+			"        .then(() => { commit('done') })",
+			"    }",
+			"  }$2",
+			"}",
+			""
+		]
+	}
+}
